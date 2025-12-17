@@ -519,22 +519,6 @@ function shakeBox() {
 */
 
 function getGameNumber() {
-  const now = new Date();
-
-  // Local midnight today
-  const today = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate()
-  );
-
-  // Local midnight of start date
-  const start = new Date(
-    2025, 9, 23 // Oct 23, 2025 (month is 0-based)
-  );
-
-  const msPerDay = 24 * 60 * 60 * 1000;
-  const dayDifference = Math.floor((today - start) / msPerDay);
-
-  return (dayDifference % 3822) + 1;
+  return Math.floor(Math.random() * 3821 + 1);
 }
+
