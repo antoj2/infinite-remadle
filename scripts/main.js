@@ -219,7 +219,9 @@ function copyStats() {
   } else {
     output += ` ${gameState.guesses.length}/6\n`;
   }
-
+  
+  output += `${productName}\n`
+  
   gameState.guesses.forEach((guess) => {
     switch (guess.direction) {
       case "&uarr;":
@@ -261,12 +263,12 @@ function copyStats() {
         .share({
           title: "REMADLE",
           text: output,
-          url: "https://remadle.fuglede.dk",
+          url: "https://simonphilipwerk.dk/remadle",
         })
         .catch((error) => console.error("Share failed:", error));
     }
   } else {
-    output += `https://remadle.fuglede.dk`;
+    output += `https://simonphilipwerk.dk/remadle`;
     navigator.clipboard.writeText(output);
     displayToast();
   }
